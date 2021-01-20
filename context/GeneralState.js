@@ -10,7 +10,7 @@ const GeneralState = props => {
         dummy_data: [
             { id: "1", hour: "8:00", avaible: true, userName: "" },
             { id: "2", hour: "8:30", avaible: true, userName: "" },
-            { id: "26", hour: "9:00", avaible: true, userName: "" },
+            { id: "25", hour: "9:00", avaible: true, userName: "" },
             { id: "3", hour: "9:30", avaible: true, userName: "" },
             { id: "4", hour: "10:00", avaible: true, userName: "" },
             { id: "5", hour: "10:30", avaible: true, userName: "" },
@@ -33,7 +33,6 @@ const GeneralState = props => {
             { id: "22", hour: "19:00", avaible: true, userName: "" },
             { id: "23", hour: "19:30", avaible: true, userName: "" },
             { id: "24", hour: "20:00", avaible: true, userName: "" },
-            { id: "25", hour: "20:30", avaible: true, userName: "" }
         ],
         currentUser: null,
         countDelivery: 8
