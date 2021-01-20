@@ -3,7 +3,10 @@ import { Text, Container, Content, Button, Toast } from "native-base"
 import { View, TextInput } from "react-native"
 import GeneralContext from "../context/GeneralContext"
 import { useNavigation } from '@react-navigation/native'
+
 const User = () => {
+
+
     const navigation = useNavigation();
 
     const { setCurrentUser } = useContext(GeneralContext);
@@ -13,7 +16,6 @@ const User = () => {
 
         if (userName === "") {
             setmessage("Debe ingresar nombre de usuario")
-            console.log("entra")
             return
         }
         setCurrentUser(userName)
@@ -33,7 +35,7 @@ const User = () => {
         <Container>
             <Content>
                 <View style={{ paddingTop: 50, alignItems: "center", justifyContent: "space-between" }}>
-                    <Text style={{ fontWeight: "bold",textTransform:"uppercase" }}>Ingrese su nombre</Text>
+                    <Text style={{ fontWeight: "bold", textTransform: "uppercase" }}>Ingrese su nombre</Text>
                     <TextInput
                         onChangeText={(text) => { setuserName(text) }}
                         value={userName}

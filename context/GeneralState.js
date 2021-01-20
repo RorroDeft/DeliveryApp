@@ -1,38 +1,26 @@
 import React, { useReducer } from 'react';
 import GeneralContext from './GeneralContext';
 import generalReducer from './GeneralReducer.js';
-
+import moment from 'moment';
 import { SET_CURRENT_USER, SET_HOUR } from "../types/index"
 
 const GeneralState = props => {
+
+    const initialHour = moment('2015-02-17 07:30:00')
+    const arrayHour = []
+    let i = 1
+    while (initialHour.hours() !== 20) {
+
+        initialHour.add(30, "minutes")
+        const hour = (initialHour.format("HH:mm"))
+        arrayHour.push({ id: i.toString(), hour, avaible: true, userName: "" })
+        i++
+    }
+
     const initialState = {
         //Data que debería venir de una API
         dummy_data: [
-            { id: "1", hour: "8:00", avaible: true, userName: "" },
-            { id: "2", hour: "8:30", avaible: true, userName: "" },
-            { id: "25", hour: "9:00", avaible: true, userName: "" },
-            { id: "3", hour: "9:30", avaible: true, userName: "" },
-            { id: "4", hour: "10:00", avaible: true, userName: "" },
-            { id: "5", hour: "10:30", avaible: true, userName: "" },
-            { id: "6", hour: "11:00", avaible: true, userName: "" },
-            { id: "7", hour: "11:30", avaible: true, userName: "" },
-            { id: "8", hour: "12:00", avaible: true, userName: "" },
-            { id: "9", hour: "12:30", avaible: true, userName: "" },
-            { id: "10", hour: "13:00", avaible: true, userName: "" },
-            { id: "11", hour: "13:30", avaible: true, userName: "" },
-            { id: "12", hour: "14:00", avaible: true, userName: "" },
-            { id: "13", hour: "14:30", avaible: true, userName: "" },
-            { id: "14", hour: "15:00", avaible: true, userName: "" },
-            { id: "15", hour: "15:30", avaible: true, userName: "" },
-            { id: "16", hour: "16:00", avaible: true, userName: "" },
-            { id: "17", hour: "16:30", avaible: true, userName: "" },
-            { id: "18", hour: "17:00", avaible: true, userName: "" },
-            { id: "19", hour: "17:30", avaible: true, userName: "" },
-            { id: "20", hour: "18:00", avaible: true, userName: "" },
-            { id: "21", hour: "18:30", avaible: true, userName: "" },
-            { id: "22", hour: "19:00", avaible: true, userName: "" },
-            { id: "23", hour: "19:30", avaible: true, userName: "" },
-            { id: "24", hour: "20:00", avaible: true, userName: "" }
+            ...arrayHour
         ],
         currentUser: null,
         countDelivery: 8
