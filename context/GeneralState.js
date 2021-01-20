@@ -32,7 +32,7 @@ const GeneralState = props => {
             { id: "21", hour: "18:30", avaible: true, userName: "" },
             { id: "22", hour: "19:00", avaible: true, userName: "" },
             { id: "23", hour: "19:30", avaible: true, userName: "" },
-            { id: "24", hour: "20:00", avaible: true, userName: "" },
+            { id: "24", hour: "20:00", avaible: true, userName: "" }
         ],
         currentUser: null,
         countDelivery: 8
